@@ -74,6 +74,10 @@
               "browserTarget": "neatral:build:development"
             }
           },
+          "options": {
+            "host": "0.0.0.0",
+            "poll": 1
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
