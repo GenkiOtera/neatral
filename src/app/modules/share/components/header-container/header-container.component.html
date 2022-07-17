@@ -3,7 +3,7 @@
         <button type="button" mat-icon-button (click)="drawer.toggle()">
             <i class="bi bi-list fs-3"></i>
         </button>
-        <h1>Neatral</h1>
+        <h1 class="user-select-none">Neatral</h1>
         <button type="button" mat-icon-button>
             <i class="bi bi-person-circle fs-3"></i>
         </button>
@@ -11,7 +11,7 @@
     <mat-drawer-container class="flex-grow-1 bg-dark bg-opacity-75" [hasBackdrop]="true">
         <mat-drawer #drawer mode="over" class="w-25">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item list-group-item-action fs-5"
+                <li class="list-group-item list-group-item-action fs-5 user-select-none"
                     *ngFor="let path of paths"
                     [ngClass]="{active : selectedPath == path}"
                     (click)="onSelectPath(path)">
