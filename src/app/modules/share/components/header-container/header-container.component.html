@@ -1,3 +1,26 @@
-<div>
-    <ng-content></ng-content>
+<div class="container-fruid h-100 d-flex flex-column">
+    <mat-toolbar class="d-flex justify-content-between bg-secondary bg-opacity-50">
+        <button type="button" mat-icon-button (click)="drawer.toggle()">
+            <i class="bi bi-list fs-3"></i>
+        </button>
+        <h1>Neatral</h1>
+        <button type="button" mat-icon-button>
+            <i class="bi bi-person-circle fs-3"></i>
+        </button>
+    </mat-toolbar>
+    <mat-drawer-container class="flex-grow-1 bg-dark bg-opacity-75" [hasBackdrop]="true">
+        <mat-drawer #drawer mode="over" class="w-25">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item list-group-item-action fs-5"
+                    *ngFor="let path of paths"
+                    [ngClass]="{active : selectedPath == path}"
+                    (click)="onSelectPath(path)">
+                    <i class="bi bi-house-door"></i>{{ path }}
+                </li>
+            </ul>
+        </mat-drawer>
+        <mat-drawer-content>
+            <ng-content></ng-content>
+        </mat-drawer-content>
+    </mat-drawer-container>
 </div>
